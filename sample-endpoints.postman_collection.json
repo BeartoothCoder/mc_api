@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "108b0326-db9e-4b63-9d40-3197e3ccf411",
+		"name": "mc-recipe-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33728534"
+	},
+	"item": [
+		{
+			"name": "recipe_list",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/recipes",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe_list_query_shaped_furnace",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/recipes?q=iron ingot",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"recipes"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "iron ingot"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe_list_query_shapeless",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/recipes?q=flint and steel",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"recipes"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "flint and steel"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe_list_query_brewing",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/recipes?q=strength",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"recipes"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "strength"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe_list_query_smithing_transform",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/recipes?q=netherite",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"recipes"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "netherite"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe_detail",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/recipes/4602",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"recipes",
+						"4602"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe_update",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"img_link\": \"https://www.minecraft-crafting.net/app/src/Other/craft/craft_flowerpot.png\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/recipes/4415/",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"recipes",
+						"4415",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
