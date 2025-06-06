@@ -51,7 +51,10 @@ def recipe_detail(request:HttpRequest, id:int):
     recipe = get_object_or_404(Recipe, id=id)
     if request.method == 'PATCH':
         # Update the resource before returning it
-        patch:dict = json.loads(request.body)
+        try:
+            patch:dict = json.loads(request.body)
+        except json.JSONDecodeError:
+            return HttpResponseBadRequest('Bad Request')
         img_link = patch.get('img_link')
         if img_link is not None:
             recipe.img_link = img_link
