@@ -45,6 +45,7 @@ py manage.py runserver 192.168.91.1:80    # Use host's IP instead. Keep port 80.
 ```
 GET     /recipes/                       # Get all recipes
 GET     /recipes/?q=flint and steel     # Search recipes
+GET     /recipes/random/                # Get random recipe
 GET     /recipes/4415/                  # Get recipe details
 PATCH   /recipes/4415/                  # Update recipe
 ```

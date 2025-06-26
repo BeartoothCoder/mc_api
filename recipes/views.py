@@ -1,4 +1,5 @@
 import json
+import random
 from django.http import HttpRequest, HttpResponse, HttpResponseNotFound, HttpResponseBadRequest
 from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
@@ -59,5 +60,13 @@ def recipe_detail(request:HttpRequest, id:int):
         if img_link is not None:
             recipe.img_link = img_link
             recipe.save()
+    response = HttpResponse(json.dumps(_serialize(recipe)), headers=HEADERS)
+    return response
+
+
+@require_http_methods(['GET'])
+@csrf_exempt
+def recipe_random(request:HttpRequest):
+    recipe = random.choice(list(Recipe.objects.all()))
     response = HttpResponse(json.dumps(_serialize(recipe)), headers=HEADERS)
     return response
