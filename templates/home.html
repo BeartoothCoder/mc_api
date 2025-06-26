@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MC API</title>
+    <style>
+        :root {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+        }
+        body {
+            padding-left: 1rem;
+        }
+        ul {
+            margin-bottom: 6rem;
+        }
+        li {
+            margin-top: 1rem;
+            line-height: 1.3;
+        }
+        code {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .get {
+            color: limegreen;
+        }
+        .patch {
+            color: rebeccapurple;
+        }
+        a {
+            font-size: 0.9em;
+        }
+        a:visited {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Minecraft Recipes API</h1>
+    <h2>Base URL</h2>
+    <h3><code>http://{{ip}}/</code></h3>
+
+    <h2>Endpoints</h2>
+    <ul>
+        <li>
+            List all Recipes<br>
+            <code><span class="get">GET</span> /recipes/</code><br>
+            <a href="/recipes/">/recipes/</a>
+        </li>
+        <li>
+            Search Recipes<br>
+            <code><span class="get">GET</span> /recipes/?q={search query}</code><br>
+            <a href="/recipes/?q=flint and steel">/recipes/?q=flint and steel</a>
+        </li>
+        <li>
+            Get random Recipe<br>
+            <code><span class="get">GET</span> /recipes/random/</code><br>
+            <a href="/recipes/random/">/recipes/random/</a>
+        </li>
+        <li>
+            Get Recipe details<br>
+            <code><span class="get">GET</span> /recipes/{id}/</code><br>
+            <a href="/recipes/4415/">/recipes/4415/</a>
+        </li>
+        <li>
+            List all Recipes<br>
+            <code><span class="patch">PATCH</span> /recipes/{id}/</code><br>
+        </li>
+    </ul>
+
+</body>
+</html>

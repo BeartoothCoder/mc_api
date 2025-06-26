@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.shortcuts import render
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('recipes/', include('recipes.urls', namespace='recipes')),
+    path('', lambda req : render(req, 'home.html', {'ip':req.get_host()})),
 ]
