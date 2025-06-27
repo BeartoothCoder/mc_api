@@ -7,7 +7,7 @@
     <style>
         :root {
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 1.5em;
+            font-size: 1.4em;
         }
         body {
             padding-left: 1rem;
@@ -23,14 +23,16 @@
         tr > * {
             padding-right: 2rem;
             text-align: center;
-            font-size: .8rem;
+        }
+        h2 {
+            margin-bottom: -.75rem;
         }
         h4 {
             margin-top: -.5rem;
             margin-bottom: .5rem;
         }
         code {
-            font-size: 1.2em;
+            font-size: 1.3em;
             font-weight: bold;
         }
         .get {
@@ -44,6 +46,9 @@
         }
         a:visited {
             color: blue;
+        }
+        .details {
+            font-size: .8em;
         }
     </style>
 </head>
@@ -63,7 +68,7 @@
         <code><span class="get">GET</span> /recipes/?q={search query}</code><br>
         <a href="/recipes/?q=flint and steel">/recipes/?q=flint and steel</a>
         <h4>Request Parameters</h4>
-        <table>
+        <table class="details">
             <thead>
                 <tr>
                     <th>Parameter</th>
@@ -93,8 +98,12 @@
         <a href="/recipes/4415/">/recipes/4415/</a>
     </p>
     <p>
-        List all Recipes<br>
+        Update Recipe<br>
         <code><span class="patch">PATCH</span> /recipes/{id}/</code><br>
+        <span class="details">
+        Expects a JSON-formatted body that includes an <code>img_link</code>
+        key set to a string value (i.e. the URL of an image for this Recipe).
+        </span>
     </p>
 
 </body>
