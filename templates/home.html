@@ -11,13 +11,23 @@
         }
         body {
             padding-left: 1rem;
+            margin-bottom: 15vh;
         }
         ul {
             margin-bottom: 6rem;
         }
-        li {
-            margin-top: 1rem;
+        p {
+            margin-top: 1.5rem;
             line-height: 1.3;
+        }
+        tr > * {
+            padding-right: 2rem;
+            text-align: center;
+            font-size: .8rem;
+        }
+        h4 {
+            margin-top: -.5rem;
+            margin-bottom: .5rem;
         }
         code {
             font-size: 1.2em;
@@ -43,32 +53,49 @@
     <h3><code>http://{{ip}}/</code></h3>
 
     <h2>Endpoints</h2>
-    <ul>
-        <li>
-            List all Recipes<br>
-            <code><span class="get">GET</span> /recipes/</code><br>
-            <a href="/recipes/">/recipes/</a>
-        </li>
-        <li>
-            Search Recipes<br>
-            <code><span class="get">GET</span> /recipes/?q={search query}</code><br>
-            <a href="/recipes/?q=flint and steel">/recipes/?q=flint and steel</a>
-        </li>
-        <li>
-            Get random Recipe<br>
-            <code><span class="get">GET</span> /recipes/random/</code><br>
-            <a href="/recipes/random/">/recipes/random/</a>
-        </li>
-        <li>
-            Get Recipe details<br>
-            <code><span class="get">GET</span> /recipes/{id}/</code><br>
-            <a href="/recipes/4415/">/recipes/4415/</a>
-        </li>
-        <li>
-            List all Recipes<br>
-            <code><span class="patch">PATCH</span> /recipes/{id}/</code><br>
-        </li>
-    </ul>
+    <p>
+       List all Recipes<br>
+        <code><span class="get">GET</span> /recipes/</code><br>
+        <a href="/recipes/">/recipes/</a> 
+    </p>
+    <p>
+        Search Recipes<br>
+        <code><span class="get">GET</span> /recipes/?q={search query}</code><br>
+        <a href="/recipes/?q=flint and steel">/recipes/?q=flint and steel</a>
+        <h4>Request Parameters</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Description</th>
+                    <th>Format</th>
+                    <th>Required</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>q</td>
+                    <td>A search term that filters<br>the returned Recipes.<br><i>Example: <code>q=iron</code></i></td>
+                    <td>String</td>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+    </p>
+    <p>
+        Get random Recipe<br>
+        <code><span class="get">GET</span> /recipes/random/</code><br>
+        <a href="/recipes/random/">/recipes/random/</a>
+    </p>
+    <p>
+        Get Recipe details<br>
+        <code><span class="get">GET</span> /recipes/{id}/</code><br>
+        <a href="/recipes/4415/">/recipes/4415/</a>
+    </p>
+    <p>
+        List all Recipes<br>
+        <code><span class="patch">PATCH</span> /recipes/{id}/</code><br>
+    </p>
 
 </body>
 </html>
